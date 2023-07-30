@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To-Do List</title>
+  </head>
+  <body>
+    <header>To-Do List</header>
+    <div class="main">
+      <nav class="nav">
+        <div class="nav-container">
+          <!-- Added a container for the buttons -->
+          <div class="sortToDoList">
+            <button class="inbox">Inbox</button>
+            <button class="Today">Today</button>
+            <button class="this-week">This Week</button>
+          </div>
+          <button id="collapse-btn">Projects</button>
+          <div class="newProjects"></div>
+          <div class="content">
+            <button class="addProject">Add Project</button>
+            <div class="modal" id="addProjectModal">
+              <div class="modal-content">
+                <span class="close" id="closeProjectModal">&times;</span>
+                <form id="addProjectForm">
+                  <label for="projectName">Project Name:</label>
+                  <input type="text" id="newProjectName" required>
+                  <!-- Add other fields for project details as needed -->
+                  <button type="submit" class="submitProject">Add Project</button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </nav>
+      
+      <div class="todolist-preview">
+        <h1 id="project-name">Inbox</h1>
+        <div class="task-container"></div>
+        <button class="addTask">Add Task</button>
+      </div>
+
+      <!-- Modal structure -->
+      <div class="modal" id="addTaskModal">
+        <div class="modal-content">
+          <span class="close" id="closeModal">&times;</span>
+          <form id="addTaskForm">
+            <!-- Input fields for task name, description, and due date -->
+            <label for="taskName">Task Name:</label>
+            <input type="text" id="taskName" required>
+      
+            <label for="taskDescription">Description:</label>
+            <textarea id="taskDescription" rows="4" required></textarea>
+      
+            <label for="taskDueDate">Due Date:</label>
+            <input type="date" id="taskDueDate" required>
+      
+            <!-- Change the class name to "submitTask" -->
+            <button type="submit" class="submitTask">Add Task</button>
+          </form>
+        </div>
+      </div>
+    <script src="main.js"></script>
+  </body>
+</html>
